@@ -1,0 +1,3 @@
+fuegonetd-provider.o: provider.c ../include/fuegonetd.h
+
+../include/fuegonetd.h:

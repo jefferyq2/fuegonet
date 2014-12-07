@@ -1,0 +1,3 @@
+fuegonetd-requester.o: requester.c ../include/fuegonetd.h
+
+../include/fuegonetd.h:
