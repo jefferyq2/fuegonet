@@ -82,6 +82,7 @@ int main(int argc,char *argv[]) {
 			case 'h':
 					Help(0);
 			break;
+
 			case 'v':
 					optflags.ver_opt = 1;
 			break;
@@ -103,6 +104,9 @@ int main(int argc,char *argv[]) {
 
 			case 'c':
 					conf_file = optarg;
+
+			break;
+
 			case '?':
 
 				if ( (optopt == 'p') || (optopt == 'i'))
@@ -152,11 +156,6 @@ int main(int argc,char *argv[]) {
                         printf("the Multicast that will be used  is: %s\n",the_thread_data->thnetworkopt.multi_addr);
         }
 
-	printf ("before\n");
-
-	//the_thread_data->thnetworkopt->port_num = networkopt->port_num;
-	
-	printf ("after\n");
 
 	thread_prov_res = pthread_create(&thread_provider, NULL , providor_main , (void*)the_thread_data);
 

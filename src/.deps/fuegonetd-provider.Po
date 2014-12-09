@@ -1,3 +1,6 @@
-fuegonetd-provider.o: provider.c ../include/fuegonetd.h
+fuegonetd-provider.o: provider.c /usr/include/stdc-predef.h \
+ ../include/fuegonetd.h
+
+/usr/include/stdc-predef.h:
 
 ../include/fuegonetd.h:
