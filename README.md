@@ -42,5 +42,20 @@ the priority also allow the ability to built up more the one API
 where all the APIs are equal without the need of them knowing 
 about each other (without cluster awere).
 
+Load Balancing
+==============
+
+the Load balancing is been provided through a deditacted function
+in the library which built it's on table of relevant destination
+and uses a Round Robin / load based balancing to determan the 
+destination
+
+Code
+====
+
 The fuego-net application is writen in C and it is protected by
 the GPLv2 Open Source License.
+the will be relevant libraries for C / C++ / JAVA / PERL / PYTHON
+
+
+
