@@ -21,7 +21,7 @@ fuegonetd-fuegonetd.o: fuegonetd.c /usr/include/stdc-predef.h \
  /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
  /usr/include/bits/confname.h /usr/include/getopt.h \
  /usr/include/pthread.h /usr/include/sched.h /usr/include/bits/sched.h \
- /usr/include/bits/setjmp.h
+ /usr/include/bits/setjmp.h /usr/include/libconfig.h
 
 /usr/include/stdc-predef.h:
 
@@ -120,3 +120,5 @@ fuegonetd-fuegonetd.o: fuegonetd.c /usr/include/stdc-predef.h \
 /usr/include/bits/sched.h:
 
 /usr/include/bits/setjmp.h:
+
+/usr/include/libconfig.h:

@@ -21,7 +21,11 @@ AM_PROG_CC_C_O
 # Checks for libraries.
 
 # Checks for header files.
-AC_CHECK_HEADERS([stdlib.h string.h strings.h unistd.h])
+AC_CHECK_HEADERS([libconfig.h stdlib.h string.h strings.h unistd.h])
+
+PKG_CHECK_MODULES([LIBCONFIGXX], [libconfig++ >= 1.4],,
+       AC_MSG_ERROR([libconfig++ 1.4 or newer not found.]))
+
 
 # Checks for typedefs, structures, and compiler characteristics.
 

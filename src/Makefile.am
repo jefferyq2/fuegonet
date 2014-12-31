@@ -6,4 +6,4 @@ AM_LDFLAGS =
 bin_PROGRAMS = fuegonetd
 fuegonetd_SOURCES = fuegonetd.c provider.c requester.c
 fuegonetd_CFLAGS = -I$(top_srcdir)/include
-fuegonetd_LDFLAGS = -lpthread
+fuegonetd_LDFLAGS = -lpthread -lconfig

@@ -24,6 +24,19 @@
  * for details.
  */
 
+typedef struct network_options {
+        const char *multi_addr;
+        int port_num;
+        const char *interface_name;
+} network_opt;
+
+typedef struct thread_data {
+        network_opt thnetworkopt;
+        char **client_tbl;
+
+} threadata ;
+
+
 void *providor_main(void *table_clnt);
 
 void *requester_main(void *table_clnt);

@@ -31,6 +31,7 @@
 #include <strings.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <libconfig.h>
 
 void Help(int rcode) {
 
@@ -55,25 +56,18 @@ typedef struct {
 	unsigned int mcast_opt:1;
 } opt_flags;
 
-typedef struct network_options {
-	char *multi_addr;
-	int port_num;
-	char *interface_name;
-} network_opt;
-
-typedef struct thread_data {
-	network_opt thnetworkopt;
-	char **client_tbl;
-
-} threadata ;
-
 int main(int argc,char *argv[]) {
 
+	config_t cfg;
+	config_setting_t *setting;
 	threadata *the_thread_data;
 	int c,thread_prov_res, thread_req_res;
 	pthread_t thread_provider, thread_requester;
 	opt_flags optflags = { 0 , 0 , 0 , 0 , 0 };
 	char *conf_file;
+	int port_num;
+	const char *int_name;
+
 	the_thread_data = malloc(sizeof(threadata));
 
 	while ((c = getopt (argc, argv ,"hvp:i:m:c:")) != -1 ) {
@@ -104,7 +98,7 @@ int main(int argc,char *argv[]) {
 
 			case 'c':
 					conf_file = optarg;
-
+					optflags.conf_opt = 1;
 			break;
 
 			case '?':
@@ -135,18 +129,39 @@ int main(int argc,char *argv[]) {
 	// then use the sysconfdir from the autotools to set the
 	// configuration file 
 	
-	if ( optflags.port_opt == 0 ) {
+	if ( optflags.conf_opt == 1 ) {
+		config_init(&cfg);
+
+		if (!config_read_file(&cfg, conf_file)) {
+			fprintf(stderr,"%s:%d - %s\n", config_error_file(&cfg), config_error_line(&cfg) , config_error_text(&cfg));
+			config_destroy(&cfg);
+			return 1;
+
+		}
+
+		setting = config_lookup(&cfg , "network");
+	
+		if (setting != NULL) {
+			config_setting_lookup_int(setting , "udp_port" , &the_thread_data->thnetworkopt.port_num);
+
+			config_setting_lookup_string(setting , "interface" , &the_thread_data->thnetworkopt.interface_name);
+
+			config_setting_lookup_string(setting , "multicast" , &the_thread_data->thnetworkopt.multi_addr);
+		}
+	}
+
+	if (( optflags.port_opt == 0 ) && (!the_thread_data->thnetworkopt.port_num)){
 		the_thread_data->thnetworkopt.port_num = 4321;
 	}
 	
-	if ( optflags.int_opt == 0 ) {
-		the_thread_data->thnetworkopt.interface_name = (char*)calloc(5,sizeof(char*));
-		strcpy(the_thread_data->thnetworkopt.interface_name,"ANY");
+	if (( optflags.int_opt == 0 ) && (!the_thread_data->thnetworkopt.interface_name)) {
+		//the_thread_data->thnetworkopt.interface_name = (char*)calloc(5,sizeof(char*));
+		the_thread_data->thnetworkopt.interface_name = strdup("ANY");
 	}	
-	
-	if ( optflags.mcast_opt == 0 ) {
-		the_thread_data->thnetworkopt.multi_addr = (char*)calloc(16,sizeof(char*));
-		strcpy(the_thread_data->thnetworkopt.multi_addr,"226.1.1.1");
+
+	if (( optflags.mcast_opt == 0 ) && (!the_thread_data->thnetworkopt.multi_addr)){
+		//the_thread_data->thnetworkopt.multi_addr = (char*)calloc(16,sizeof(char*));
+		the_thread_data->thnetworkopt.multi_addr = strdup("226.1.1.1");
 	}
 
 	if ( optflags.ver_opt == 1 ) {

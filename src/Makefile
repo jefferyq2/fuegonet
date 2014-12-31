@@ -200,6 +200,8 @@ INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
+LIBCONFIGXX_CFLAGS =  
+LIBCONFIGXX_LIBS = -lconfig++  
 LIBOBJS = 
 LIBS = 
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
@@ -223,6 +225,9 @@ PACKAGE_TARNAME = fuego-net
 PACKAGE_URL = 
 PACKAGE_VERSION = 0.1
 PATH_SEPARATOR = :
+PKG_CONFIG = /usr/bin/pkg-config
+PKG_CONFIG_LIBDIR = 
+PKG_CONFIG_PATH = 
 RANLIB = ranlib
 SED = /usr/bin/sed
 SET_MAKE = 
@@ -285,7 +290,7 @@ AM_CFLAGS = -g -O2
 AM_LDFLAGS = 
 fuegonetd_SOURCES = fuegonetd.c provider.c requester.c
 fuegonetd_CFLAGS = -I$(top_srcdir)/include
-fuegonetd_LDFLAGS = -lpthread
+fuegonetd_LDFLAGS = -lpthread -lconfig
 all: all-am
 
 .SUFFIXES:
