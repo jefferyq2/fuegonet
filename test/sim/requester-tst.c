@@ -1,4 +1,4 @@
-*
+/*
  * the fuegonet is an open source project for Enterprise applicaion
  * interface without a coordinator server
  * Copyright (C) yyyy  Oren Oichman
