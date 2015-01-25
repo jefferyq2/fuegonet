@@ -24,33 +24,18 @@
  * for details.
  */
 
-<<<<<<< HEAD
-
 #include <linux/kernel.h>
-#include <linux/sys.h>
-=======
-#include <linux/kernel.h>
->>>>>>> requester
 #include <stdio.h>
 #include <sys/sysinfo.h>
 
 int main () {
 
  /* Conversion constants. */
-<<<<<<< HEAD
-=======
 
->>>>>>> requester
  const long minute = 60;
  const long hour = minute * 60;
  const long day = hour * 24;
  const double megabyte = 1024 * 1024;
-<<<<<<< HEAD
- /* Obtain system statistics. */
- struct sysinfo si;
- sysinfo (&si);
- /* Summarize interesting values. */
-=======
 
  /* Obtain system statistics. */
 
@@ -59,7 +44,6 @@ int main () {
 
  /* Summarize interesting values. */
 
->>>>>>> requester
  printf ("system uptime : %ld days, %ld:%02ld:%02ld\n",
      si.uptime / day, (si.uptime % day) / hour,
      (si.uptime % hour) / minute, si.uptime % minute);
