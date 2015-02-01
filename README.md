@@ -50,6 +50,14 @@ in the library which built it's on table of relevant destination
 and uses a Round Robin / load based balancing to determan the 
 destination
 
+Scale out
+===========
+
+by using the fuegonet as your application message transfer Backbone
+you can very easilly scale out at any time without a downtime window
+just by adding the additional server and joining the new client to
+the right groups and premissions
+
 Code
 ====
 
