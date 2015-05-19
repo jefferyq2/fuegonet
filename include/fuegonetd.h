@@ -24,6 +24,15 @@
  * for details.
  */
 
+
+typedef struct {
+	unsigned int ver_opt:1;
+	unsigned int port_opt:1;
+	unsigned int int_opt:1;
+	unsigned int conf_opt:1;
+	unsigned int mcast_opt:1;
+} opt_flags;
+
 typedef struct network_options {
         const char *multi_addr;
         int port_num;

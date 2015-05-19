@@ -36,5 +36,7 @@ AC_OUTPUT
 
 AC_OUTPUT([Makefile include/Makefile
 		   man/Makefile
+		   tools/sim/Makefile
+		   tools/bin/Makefile
+		   tools/sysinfo/Makefile
 		   src/Makefile])
-
