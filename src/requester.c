@@ -31,4 +31,5 @@ void *requester_main(void *table_clnt) {
 	threadata requester_data;
 	requester_data = *(threadata*)table_clnt;
 
+
 }
