@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # generated automatically by aclocal 1.15 -*- Autoconf -*-
+=======
+# generated automatically by aclocal 1.14.1 -*- Autoconf -*-
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 
 # Copyright (C) 1996-2014 Free Software Foundation, Inc.
 
@@ -235,7 +239,11 @@ AS_VAR_COPY([$1], [pkg_cv_][$1])
 AS_VAR_IF([$1], [""], [$5], [$4])dnl
 ])# PKG_CHECK_VAR
 
+<<<<<<< HEAD
 # Copyright (C) 2002-2014 Free Software Foundation, Inc.
+=======
+# Copyright (C) 2002-2013 Free Software Foundation, Inc.
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 #
 # This file is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
@@ -247,10 +255,17 @@ AS_VAR_IF([$1], [""], [$5], [$4])dnl
 # generated from the m4 files accompanying Automake X.Y.
 # (This private macro should not be called outside this file.)
 AC_DEFUN([AM_AUTOMAKE_VERSION],
+<<<<<<< HEAD
 [am__api_version='1.15'
 dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
 dnl require some minimum version.  Point them to the right macro.
 m4_if([$1], [1.15], [],
+=======
+[am__api_version='1.14'
+dnl Some users find AM_AUTOMAKE_VERSION and mistake it for a way to
+dnl require some minimum version.  Point them to the right macro.
+m4_if([$1], [1.14.1], [],
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
       [AC_FATAL([Do not call $0, use AM_INIT_AUTOMAKE([$1]).])])dnl
 ])
 
@@ -266,7 +281,11 @@ m4_define([_AM_AUTOCONF_VERSION], [])
 # Call AM_AUTOMAKE_VERSION and AM_AUTOMAKE_VERSION so they can be traced.
 # This function is AC_REQUIREd by AM_INIT_AUTOMAKE.
 AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],
+<<<<<<< HEAD
 [AM_AUTOMAKE_VERSION([1.15])dnl
+=======
+[AM_AUTOMAKE_VERSION([1.14.1])dnl
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 m4_ifndef([AC_AUTOCONF_VERSION],
   [m4_copy([m4_PACKAGE_VERSION], [AC_AUTOCONF_VERSION])])dnl
 _AM_AUTOCONF_VERSION(m4_defn([AC_AUTOCONF_VERSION]))])
@@ -787,11 +806,15 @@ to "yes", and re-run configure.
 END
     AC_MSG_ERROR([Your 'rm' program is bad, sorry.])
   fi
+<<<<<<< HEAD
 fi
 dnl The trailing newline in this macro's definition is deliberate, for
 dnl backward compatibility and to allow trailing 'dnl'-style comments
 dnl after the AM_INIT_AUTOMAKE invocation. See automake bug#16841.
 ])
+=======
+fi])
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 
 dnl Hook into '_AC_COMPILER_EXEEXT' early to learn its expansion.  Do not
 dnl add the conditional right here, as _AC_COMPILER_EXEEXT may be further
@@ -980,7 +1003,11 @@ AC_DEFUN([_AM_SET_OPTIONS],
 AC_DEFUN([_AM_IF_OPTION],
 [m4_ifset(_AM_MANGLE_OPTION([$1]), [$2], [$3])])
 
+<<<<<<< HEAD
 # Copyright (C) 1999-2014 Free Software Foundation, Inc.
+=======
+# Copyright (C) 1999-2013 Free Software Foundation, Inc.
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 #
 # This file is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,
@@ -1027,7 +1054,11 @@ AC_LANG_POP([C])])
 # For backward compatibility.
 AC_DEFUN_ONCE([AM_PROG_CC_C_O], [AC_REQUIRE([AC_PROG_CC])])
 
+<<<<<<< HEAD
 # Copyright (C) 2001-2014 Free Software Foundation, Inc.
+=======
+# Copyright (C) 2001-2013 Free Software Foundation, Inc.
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 #
 # This file is free software; the Free Software Foundation
 # gives unlimited permission to copy and/or distribute it,

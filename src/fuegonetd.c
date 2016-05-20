@@ -49,14 +49,6 @@ void Help(int rcode) {
 }
 
 
-typedef struct {
-	unsigned int ver_opt:1;
-	unsigned int port_opt:1;
-	unsigned int int_opt:1;
-	unsigned int conf_opt:1;
-	unsigned int mcast_opt:1;
-} opt_flags;
-
 int main(int argc,char *argv[]) {
 
 	config_t cfg;

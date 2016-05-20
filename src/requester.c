@@ -25,11 +25,27 @@
  */
 
 #include "fuegonetd.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 void *requester_main(void *table_clnt) {
 
+<<<<<<< HEAD
 	threadata requester_data;
 	requester_data = *(threadata*)table_clnt;
 
+=======
+	threadata *requester_data;
+
+	requester_data = malloc(sizeof(threadata));
+
+	*requester_data = *(threadata*)table_clnt;
+
+
+
+	printf("UDP network port is: %d\n",requester_data->thnetworkopt.port_num);
+                printf("Network interface is: %s\n",requester_data->thnetworkopt.interface_name);
+                printf("the Multicast that will be used  is: %s\n",requester_data->thnetworkopt.multi_addr);
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 
 }

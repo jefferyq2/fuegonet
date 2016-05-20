@@ -2229,7 +2229,11 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $
 ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
+<<<<<<< HEAD
 am__api_version='1.15'
+=======
+am__api_version='1.14'
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 
 ac_aux_dir=
 for ac_dir in "$srcdir" "$srcdir/.." "$srcdir/../.."; do
@@ -2836,7 +2840,10 @@ END
     as_fn_error $? "Your 'rm' program is bad, sorry." "$LINENO" 5
   fi
 fi
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90c892ea5284d88b8bf00a911aa6155e6d97815b
 
 ac_config_headers="$ac_config_headers config.h"
 
@@ -14987,7 +14994,7 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
 fi
 
 
-ac_config_files="$ac_config_files Makefile include/Makefile man/Makefile src/Makefile"
+ac_config_files="$ac_config_files Makefile include/Makefile man/Makefile tools/sim/Makefile tools/bin/Makefile tools/sysinfo/Makefile src/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -16012,6 +16019,9 @@ do
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "include/Makefile") CONFIG_FILES="$CONFIG_FILES include/Makefile" ;;
     "man/Makefile") CONFIG_FILES="$CONFIG_FILES man/Makefile" ;;
+    "tools/sim/Makefile") CONFIG_FILES="$CONFIG_FILES tools/sim/Makefile" ;;
+    "tools/bin/Makefile") CONFIG_FILES="$CONFIG_FILES tools/bin/Makefile" ;;
+    "tools/sysinfo/Makefile") CONFIG_FILES="$CONFIG_FILES tools/sysinfo/Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
@@ -17281,5 +17291,4 @@ if test -n "$ac_unrecognized_opts" && test "$enable_option_checking" != no; then
   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
 $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
 fi
-
 
