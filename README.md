@@ -1,69 +1,26 @@
-fuegonet
-========
+# Fuegonet
 
-the fuego-net is an Open Source project which is an implementation
-of the dtpp (Data Transaction Priority Protocal) for sending
-information between the applications API
+Feugonet is an Open Source projects which provide your Servers the ability to share System and service information status
+with other servers which enables multi to multi load balancing 
 
-what does it do ?
-=================
-
-the application provides a backbone for sending data between any
-API without a central bottleneck server by talking to the API 
-locally and sending the data in binary transfer over the network
-to the destination fuegonet which recieve the data will locally 
-send the data to it's APIs in speed and high quality with the 
-ability to priorities the destination and send the data to the 
-fastest API. 
-
-fuegonet components 
-===================
-
-there are 3 components for the application:
-
-1) the udp layer which provides a realtime information about the 
-   application members.
-
-2) the tcp layer which is the message carier over the network in
-   a peer to peer mode to the destination server.
-
-3) the library stack which enable the application to use the 
-   fuegonet ability to their use.
-
-Priority control
-================
-
-each massage with in the application has it's own priority which
-can be set by the sender API which will tell the client to give a
-higher priority to this message over the others in the queue is
-this option is set
-
-the priority also allow the ability to built up more the one API 
-where all the APIs are equal without the need of them knowing 
-about each other (without cluster awere).
-
-Load Balancing
-==============
-
-the Load balancing is been provided through a deditacted function
-in the library which built it's on table of relevant destination
-and uses a Round Robin / load based balancing to determan the 
-destination
-
-Scale out
-===========
-
-by using the fuegonet as your application message transfer Backbone
-you can very easilly scale out at any time without a downtime window
-just by adding the additional server and joining the new client to
-the right groups and premissions
-
-Code
-====
-
-The fuego-net application is writen in C and it is protected by
-the GPLv2 Open Source License.
-the will be relevant libraries for C / C++ / JAVA / PERL / PYTHON
+## Getting Started
 
 
+everything that fuegonet needs is in the glibc package
+
+### Installing
+
+Now lets download and install fuegonet
+
+
+    $ git clone https://github.com/ooichman/fuegonet.git
+    $ cd fuegonet
+    $ make
+    $ make install
+
+- On Redhat/Centos/Fedora you can use the fuegonet.spec file by tar the directory and rpmbuild it:
+    $ tar -zcvf 0.1.0.tar.gz fuegonet/ && rpmbuild -ta 0.1.0.tar.gz
+ 
+now you have a service daemon you need to run named **fuegonetd** and a set of tools to
+test your multicast/unicast network configuration.
 
